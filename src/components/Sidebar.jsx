@@ -1,9 +1,14 @@
+
+
 const Sidebar = () => {
   return (
-    <div>
-        <div>Home</div>
-        <div>About</div>
+    <div className="sidebar">
+      <a href="#" onClick={() => changePage('home')}>Home</a>
+      <hr />
+      <a href="#" onClick={() => changePage('about')}>About</a>
+
     </div>
+    
   );
 }
 
