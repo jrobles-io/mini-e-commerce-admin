@@ -49,7 +49,11 @@ h1 {
   margin-left: 50px;
 }
 
-.product li {
+.product-list {
+  margin-left: 50px;
+}
+
+.product-card {
   border: 2px solid #ccc; 
   margin-bottom: 20px; 
   padding: 15px; 

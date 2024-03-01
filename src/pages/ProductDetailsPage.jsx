@@ -6,8 +6,8 @@ function ProductDetailsPage({ products }) {
   const { productId } = useParams();
   console.log("productID -->", productId);
 
-  const product = products.find((product) => product.id === productId);
-  console.log(product);
+  const product = products.find((product) => product.id == productId );
+  console.log("product ---->", product);
 
   if(!product) {
     return <Navigate to="/error" />;
@@ -25,6 +25,10 @@ function ProductDetailsPage({ products }) {
       <p>Brand: {product.brand}</p>
       <p>Category: {product.category}</p>
       <img src={product.thumbnail} alt={product.title} />
+
+
+
+      
       {/* <Link to="/products">Back</Link> */}
     </div>
   );
