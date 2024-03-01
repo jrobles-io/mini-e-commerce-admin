@@ -72,3 +72,9 @@ h3 {
   text-align: center;
   margin-left: 30px;
 }
+
+
+/* the img for error page */
+.page-img {
+  width: 70%;
+}
