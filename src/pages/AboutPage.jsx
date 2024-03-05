@@ -23,7 +23,7 @@ const allImages = [
 
 function AboutPage() {
   return (
-    <div>
+    <div className="AboutPage">
       <h1>Learn About our Members!</h1>
       <hr />
       {allImages.map((image, index) => (
