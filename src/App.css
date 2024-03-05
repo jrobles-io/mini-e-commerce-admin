@@ -19,7 +19,7 @@ body, html {
   padding: 10px 20px 10px 100px;
   text-align: center;
   flex-flow: row;
-
+  /* z-index: 2 */
 }
 
 .navbar a {
@@ -28,20 +28,18 @@ body, html {
 
 }
 
-.sidebar {
-  background-color: #343a40;
-  color: #ffffff;
-  padding: 20px;
-  width: 200px;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
+/* Para que sombree en un color  */
+.navbar :hover {
+  color: greenyellow;
+  transform: scale(1.2);
+  text-shadow: none;
 }
 
 .list {
   margin-left: 200px;
   flex: 1;
   padding: 20px;
+
 }
 
 h1 {
@@ -81,4 +79,57 @@ h3 {
 /* the img for error page */
 .page-img {
   width: 70%;
+}
+
+
+
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form span {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+form input[type="text"],
+form input[type="url"],
+form input[type="rating"],
+form input[type="stock"],
+form input[type="brand"],
+form input[type="category"],
+form select {
+  width: calc(100% - 22px); /* Adjusts width to fit padding */
+  padding: 10px;
+  margin-bottom: 20px; /* Adds space between form fields */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
 }

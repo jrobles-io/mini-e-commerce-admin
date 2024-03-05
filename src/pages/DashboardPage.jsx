@@ -4,13 +4,7 @@ import ProductCard from "../components/ProductCard";
 // import AddProduct from "../components/AddProduct";
 
 
-function DashboardPage() {
-    const [products, setProducts] = useState(productsJSON);
-
-    const addNewProduct = (newProduct) => {
-        let newProducts = [newProduct, ...products]
-        setProducts(newProducts)
-      }
+function DashboardPage( {products, setProducts} ) {
 
      const handleDelete = (id) => {
         const updateProducts = products.filter(product => product.id !== id);
@@ -23,10 +17,10 @@ function DashboardPage() {
         <h2> Product List </h2>
         {/* <AddProduct addNewProduct={addNewProduct} /> */}
         {products.map(product => {
-        return <ProductCard key={product.id} product={product} handleDelete={handleDelete}/>
-
-    })}
-    </div>
+          return <ProductCard key={product.id} product={product} handleDelete={handleDelete}/>
+          })
+        }
+      </div>
   )
 }
 

@@ -1,22 +1,28 @@
+import styles from "../Sidebar.module.css";
+import { NavLink } from "react-router-dom";
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
+import { SidebarData } from "../components/SidebarData";
+import { useState } from "react";
 
+export default function Sidebar() {
+    const [open, setOpen] = useState(true);
 
-const Sidebar = () => {
-  return (
-    <div className="sidebar">
-      <a href="#" onClick={() => changePage('home')}>Home</a>
-      <hr />
-      <a href="#" onClick={() => changePage('about')}>About</a>
+    const toggleOpen = () => {
+        setOpen(!open);
+    };
 
-    </div>
-    
-  );
+    return (
+        <div className={open ? styles.sidebar : styles.sidebarClosed}>
+            <button className={styles.menuBtn} onClick={toggleOpen}>
+                {open ? <KeyboardDoubleArrowLeftIcon /> : <KeyboardDoubleArrowRightIcon />}
+            </button>
+            {SidebarData.map(item => (
+                <NavLink key={item.id} className={styles.sideitem} to={item.link}>
+                    {item.icon}
+                    <span className={styles.linkText}>{item.text}</span>
+                </NavLink>
+            ))}
+        </div>
+    );
 }
-
-export default Sidebar
-
-
-
-
-// https://www.flowbite-react.com/docs/components/sidebar#
-
-//https://www.npmjs.com/package/react-pro-sidebar
