@@ -1,9 +1,21 @@
 // from list components
 // el nombre img delete btn, details btn 
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { useContext, useEffect } from "react";
+import { ProductContext } from "../contexts/products.context";
+
 
 function ProductCard ( { product, handleDelete } ) {
-   
+
+    // const { productId } = useParams();
+    // const { products } = useContext(ProductContext);
+    
+    // // useEffect(() => {
+    //     const product = products.find((product) => product.id == productId);
+    //     console.log(product)
+    //     console.log(productId)
+    //     console.log(products)
+    // // }, [])
 
     return (
         <div className="product-card">

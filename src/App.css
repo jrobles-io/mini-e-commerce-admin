@@ -8,43 +8,43 @@ body, html {
 .App {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
 }
+
 
 .AboutPage {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center the title and potentially other inline content */
+  padding: 20px; /* Add some padding around the container */
 }
 
-h1 {
-  color: #333;
+.AboutPage h1 {
+  margin-bottom: 20px; /* Add some space below the title */
 }
 
-hr {
-  border: 1px solid #ddd;
-}
-
-a {
-  text-decoration: none;
-  color: #fbfbfc;
-}
-
-a:hover {
-  text-decoration: underline;
+.images {
+  align-content: center;
+  display: flex; /* Use flexbox to lay out images */
+  justify-content: space-around; /* Center the images container horizontally */
+  flex-wrap: nowrap; /* Allow images to wrap to the next line if needed */
+  gap: 10px; /* Add some space between the images */
 }
 
 .nameimages-img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: block; /* Override default inline display */
+  width: 100px; /* Set a fixed width for images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Optional: Makes images circular */
+  transition: transform 0.3s ease; /* Smooth transition for effects */
 }
 
+.nameimages-img:hover {
+  transform: scale(1.1); /* Scale images up slightly on hover */
+}
+
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color from parent */
+}
 
 .navbar {
   width: 100%;
@@ -53,7 +53,6 @@ a:hover {
   padding: 10px 20px 10px 100px;
   text-align: center;
   flex-flow: row;
-  /* z-index: 2 */
 }
 
 .navbar a {
@@ -69,9 +68,14 @@ a:hover {
   text-shadow: none;
 }
 
-.list {
+.content {
+  display: flex;
+}
+
+.main-content {
   margin-left: 200px;
-  flex: 1;
+  flex-grow: 1;
+  padding: 20px;
   padding: 20px;
 
 }
@@ -103,20 +107,15 @@ h1 {
   margin-top: auto; /* Pushes the footer to the bottom */
 }
 
-
 h3 {
   text-align: center;
   margin-left: 30px;
 }
 
-
 /* the img for error page */
 .page-img {
   width: 70%;
 }
-
-
-
 
 form {
   max-width: 600px;

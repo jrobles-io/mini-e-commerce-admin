@@ -1,10 +1,13 @@
 
 import { useParams, Link, Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { ProductContext } from "../contexts/products.context";
 
-
-function ProductDetailsPage({ products }) {
+function ProductDetailsPage( ) {
   const { productId } = useParams();
   console.log("productID -->", productId);
+
+  const {products} = useContext(ProductContext);
 
   const product = products.find((product) => product.id == productId );
   console.log("product ---->", product);
@@ -26,9 +29,10 @@ function ProductDetailsPage({ products }) {
       <p>Category: {product.category}</p>
       <img src={product.thumbnail} alt={product.title} />
 
+      {/* For the Edit Product */}
+        <Link to={`/editProduct/${product.id}`}>Edit Product</Link>
 
 
-      
       {/* <Link to="/products">Back</Link> */}
     </div>
   );

@@ -12,6 +12,8 @@ import ErrorPage from './pages/ErrorPage';
 import DashboardPage from './pages/DashboardPage'
 import AddProductPage from './pages/AddProductPage';
 import {useState} from 'react'
+import EditProduct from './pages/EditProduct'
+
 
 
 const App = () => {
@@ -30,20 +32,25 @@ const App = () => {
 
       <div className="App">
         <Navbar />
-
-        <Sidebar /> 
-        <main className="list">
-          {/* <List /> */}
-          {/* <DashboardPage /> */}
-          <Routes>
-            <Route path="/" element={<DashboardPage products={products} setProducts={setProducts}/>}/>
-            <Route path="/product/:productId" element={<ProductDetailsPage products={products}/>} />
-            <Route path='/about' element={<AboutPage />} />
-            <Route path='/AddProduct' element={<AddProductPage addNewProduct={addNewProduct} productId={productId} setProductId={setProductId}/>}/>
-            {/* Error page Route*/}
-            <Route path="*" element={ <ErrorPage /> } />
-          </Routes>
-        </main>
+        <Sidebar />
+        <div className="content">
+        {/* <div className={`content ${sidebarOpen ? '' : 'sidebarClosed'}`}> */} 
+          <main className="main-content">
+            {/* <List /> */}
+            {/* <DashboardPage /> */}
+            <Routes>
+        
+              <Route path='editProduct/:productId' element={<EditProduct />}/>
+              <Route path="/" element={<DashboardPage products={products} setProducts={setProducts}/>}/>
+              <Route path="/product/:productId" element={<ProductDetailsPage products={products}/>} />
+              <Route path='/about' element={<AboutPage />} />
+              <Route path='/AddProduct' element={<AddProductPage addNewProduct={addNewProduct} productId={productId} setProductId={setProductId}/>}/>
+              {/* Error page Route*/}
+              <Route path="*" element={ <ErrorPage /> } />
+            </Routes>
+          </main>
+        {/* </div> */}
+        </div>
         <Footer /> 
       </div>
 
