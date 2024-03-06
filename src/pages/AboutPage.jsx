@@ -64,7 +64,7 @@ const allImages = [
     name: "Kenneth",
     mainImage: {
       url: "https://upload.wikimedia.org/wikipedia/commons/7/73/Eo_circle_red_letter-k.svg",
-      alt: "Kenneth Letter",
+      alt: "Kenneth Pic",
     },
     smallImages: [
       {
@@ -100,7 +100,7 @@ function AboutPage() {
                 className="nameimages-img"
               />
             </a>
-            <div className="small-images nameimages-img-small-container">
+            <div className="nameimages-img-small">
               {person.smallImages.map((smallImage, smallIndex) => (
                 <a
                   href={smallImage.link}
