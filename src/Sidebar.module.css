@@ -1,5 +1,6 @@
 /* Sidebar Styles */
 .sidebar {
+    margin-top: 112px;
     width: 250px;
     transition: width 0.3s ease-in-out;
     height: 100vh;
@@ -11,8 +12,9 @@
 }
 
 .sidebarClosed {
-    /*transition: width 0.3s ease-in-out;*/
+    /* transition: width 0.3s ease-in-out; */
     width: 60px;
+    position: fixed;
 }
 
 .sideitem {

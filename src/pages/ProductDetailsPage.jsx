@@ -17,7 +17,7 @@ function ProductDetailsPage( ) {
   }
   
   return (
-    <div>
+    <div className="details">
       <h1>Product Details</h1>
       <h2>{product.title}</h2>
       <p>{product.description}</p>
@@ -30,7 +30,7 @@ function ProductDetailsPage( ) {
       <img src={product.thumbnail} alt={product.title} />
 
       {/* For the Edit Product */}
-        <Link to={`/editProduct/${product.id}`}>Edit Product</Link>
+        <button><Link to={`/editProduct/${product.id}`}>Edit Product</Link></button>
 
 
       {/* <Link to="/products">Back</Link> */}

@@ -7,6 +7,7 @@ import { ProductContext } from "../contexts/products.context";
 
 function ProductCard ( { product, handleDelete } ) {
 
+
     // const { productId } = useParams();
     // const { products } = useContext(ProductContext);
     
@@ -21,9 +22,7 @@ function ProductCard ( { product, handleDelete } ) {
         <div className="product-card">
             <h3>{product.title}</h3>
             <img src={product.thumbnail} alt={product.title} />
-
             <button onClick={() => handleDelete(product.id)}>Delete</button>
-
             <Link to = {`/product/${product.id}`}>
                 <button>Details</button>           
             </Link>

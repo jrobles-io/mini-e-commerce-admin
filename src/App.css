@@ -1,6 +1,6 @@
 body, html {
   margin: 0;
-  padding: 0;
+  padding: 60px 0px 0px 0px;
   width: 100%;
   height: 100%;
 }
@@ -13,8 +13,8 @@ body, html {
 
 
 .AboutPage {
-  text-align: center; /* Center the title and potentially other inline content */
-  padding: 20px; /* Add some padding around the container */
+  text-align: center; 
+  padding: 20px; 
 }
 
 .AboutPage h1 {
@@ -40,6 +40,31 @@ body, html {
 .nameimages-img:hover {
   transform: scale(1.1); /* Scale images up slightly on hover */
 }
+.nameimages-img-small {
+  display: block;
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+/* Add this to your existing app.css or AboutPage.css */
+
+.nameimages-img-small-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* Additional styling if you want space between the smaller images */
+.nameimages-img-small + .nameimages-img-small {
+  margin-left: 10px;
+}
+.nameimages-img-small-linkedin {
+  margin-top: 10px; /* Adjust the margin-top value as needed */
+}
+
+
 
 a {
   text-decoration: none; /* Remove underline from links */
@@ -53,6 +78,9 @@ a {
   padding: 10px 20px 10px 100px;
   text-align: center;
   flex-flow: row;
+
+  position: fixed;
+  top: 0; 
 }
 
 .navbar a {
@@ -79,6 +107,7 @@ a {
   padding: 20px;
 
 }
+
 
 h1 {
   text-align: center;
@@ -166,3 +195,52 @@ form button {
 form button:hover {
   background-color: #0056b3;
 }
+
+
+.details {
+  max-width: 600px; /* Limits the width of the container for better readability */
+  margin: 20px auto; /* Centers the container on the page */
+  padding: 20px;
+  background-color: #f5f5f5; /* A light background to differentiate the section */
+  border-radius: 8px; /* Softens the edges of the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+.details h1 {
+  color: #333; /* Dark color for contrast */
+  margin-bottom: 15px; /* Space between the title and the first heading */
+}
+
+.details h2 {
+  color: #007bff; /* Highlights the product title */
+  margin-bottom: 10px; /* Space between the product title and description */
+}
+
+.details p {
+  line-height: 1.6; /* Enhances readability of paragraphs */
+  margin-bottom: 5px; /* Spacing between paragraphs */
+}
+
+.details img {
+  max-width: 100%; /* Ensures the image is responsive and fits within the container */
+  height: auto; /* Maintains the image aspect ratio */
+  margin-top: 20px; /* Space above the image */
+  border-radius: 4px; /* Optional: Rounds the corners of the image */
+}
+
+.details button {
+  background-color: #007bff; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* Removes the default border */
+  padding: 10px 20px; /* Button padding for better touch area */
+  border-radius: 4px; /* Softens the edge of the buttons */
+  cursor: pointer; /* Changes the cursor to indicate the button is clickable */
+  margin-top: 20px; /* Space above the button */
+  display: inline-block; /* Allows the use of margin */
+  text-align: center; /* Centers the text within the button */
+}
+
+.details button:hover {
+  background-color: #0056b3; /* Darkens the button on hover for feedback */
+}
+
