@@ -11,15 +11,18 @@ import productsJSON from './products.json';
 import ErrorPage from './pages/ErrorPage'; 
 import DashboardPage from './pages/DashboardPage'
 import AddProductPage from './pages/AddProductPage';
-import {useState} from 'react'
+import { useState, useContext } from 'react'
 import EditProduct from './pages/EditProduct'
+import { ProductContext } from './contexts/products.context'
 
 
 
 const App = () => {
 
-  const [products, setProducts] = useState(productsJSON);
+  // const [products, setProducts] = useState(productsJSON);
   const [productId, setProductId] = useState(101);
+
+  const { products, setProducts } = useContext(ProductContext)
 
 
 

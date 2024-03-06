@@ -81,6 +81,7 @@ const allImages = [
   },
 ];
 
+
 function AboutPage() {
   return (
     <div className="AboutPage">
@@ -88,7 +89,7 @@ function AboutPage() {
 
       <div className="images">
         {allImages.map((person, index) => (
-          <div key={index}>
+          <div key={index} className="person-container">
             <a
               href={person.mainImage.link}
               target="_blank"
@@ -100,23 +101,24 @@ function AboutPage() {
                 className="nameimages-img"
               />
             </a>
-            <div className="nameimages-img-small">
+
+            <div className="nameimages-img-small-container">
               {person.smallImages.map((smallImage, smallIndex) => (
                 <a
                   href={smallImage.link}
                   key={smallIndex}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={`small-image-${smallIndex}`}
                 >
                   <img
                     src={smallImage.img}
                     alt={smallImage.alt}
                     className="nameimages-img-small"
                   />
-
                 </a>
-              ))
-              }</div> 
+              ))}
+            </div>
           </div>
         ))}
       </div>
@@ -124,5 +126,6 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
 
+
+export default AboutPage;

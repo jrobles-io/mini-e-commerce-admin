@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { imageUpload } from "../services/cloudinary";
+
 const AddProduct = ({addNewProduct, productId, setProductId}) => {
   
   // const [productId, setProductId] = useState(101)
@@ -14,8 +16,25 @@ const AddProduct = ({addNewProduct, productId, setProductId}) => {
     stock: "",
     brand: "",
     category: "",
-    image: "",
+    thumbnail: "",
   });
+
+  const [disabled, setDisabled] = useState(false)
+
+  const handlePhotoChange = (e) => {
+
+    setDisabled(true)
+    imageUpload(e)
+      .then((response) => {
+        console.log("Image uploaded ===>", response.data)
+        setDisabled(false)
+        setNewProduct((prev) => ({...prev, ['thumbnail']: response.data.url}))
+      })
+      .catch((err) => {
+        setDisabled(false)
+        console.log(err)
+      })
+  }
 
   function handleChange(event) {
     const {name, value, type, checked} = event.target   //not sure what these {name, value, type, checked} are for
@@ -30,6 +49,7 @@ const AddProduct = ({addNewProduct, productId, setProductId}) => {
 const handleFormSubmit = (e) => {
   e.preventDefault()
   addNewProduct(newProduct);
+  console.log("New product ===>", newProduct)
   setProductId(productId + 1)
   console.log("productId", productId)
     setNewProduct({
@@ -42,7 +62,7 @@ const handleFormSubmit = (e) => {
         stock: "",
         brand: "",
         category: "",
-        image: "",
+        thumbnail: "",
 
     })
 };
@@ -89,7 +109,7 @@ const handleFormSubmit = (e) => {
         
         <label>
           Image
-          <input name="image" type="url" placeholder="Image" onChange={handleChange} value={newProduct.image} />
+          <input name="thumbnail" type="file" placeholder="Image" onChange={handlePhotoChange} />
         </label>
       </div>
 
@@ -121,7 +141,7 @@ const handleFormSubmit = (e) => {
           </select>
         </label>
 
-        <button type="submit">Add Product</button>
+        <button disabled={disabled} type="submit">Add Product</button>
       </div>
     </form>
   );

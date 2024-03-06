@@ -6,8 +6,14 @@ function Navbar () {
   return (
     <nav className="navbar">
 
-      {/* ADD LOGO */}
-      <h3>Geek Corner</h3>    
+      {/* ADD LOGO IMG*/}
+      {/* <Link to="/" className="navbar-logo">
+        <img src="/logo.png" alt="Code n' Chaos Market Logo" style={{ height: '50px' }} />
+      </Link> */}
+
+
+
+      <h3>Code n' Chaos Market</h3>    
 
       <ul>
         <Link to="/"> Home </Link> 

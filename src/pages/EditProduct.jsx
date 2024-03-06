@@ -1,10 +1,13 @@
 import { useEffect, useState, useContext } from "react";
 import {ProductContext} from "../contexts/products.context.jsx";
 import { useNavigate, useParams } from "react-router-dom";
+import { imageUpload } from "../services/cloudinary.js";
 
 const EditProduct = () => {
     const [product, setProduct] = useState(null);
     const navigate = useNavigate();
+
+    const [disabled, setDisabled] = useState(false)
 
     const { products, setProducts } = useContext(ProductContext);
 
@@ -21,6 +24,23 @@ const EditProduct = () => {
         );
         navigate("/");
     };
+
+    
+
+    const handlePhotoChange = (e) => {
+  
+      setDisabled(true)
+      imageUpload(e)
+        .then((response) => {
+          console.log("Image uploaded ===>", response.data)
+          setDisabled(false)
+          setProduct((prev) => ({...prev, ['thumbnail']: response.data.url}))
+        })
+        .catch((err) => {
+          setDisabled(false)
+          console.log(err)
+        })
+    }
 
     useEffect(() => {
         
@@ -173,20 +193,15 @@ const EditProduct = () => {
                     <label>
                         Image
                         <input
-                            type="text" 
-                            value={product.thumbnail}
+                            type="file" 
+                            // value={product.thumbnail}
                             name="thumbnail"
                             alt="product"
-                            onChange={(e) => 
-                                setProduct((prev) => ({
-                                    ...prev,
-                                    [e.target.name]: e.target.value,
-                                }))
-                            } 
+                            onChange={handlePhotoChange} 
                         />
                     </label>
 
-                    <button type="submit">Edit Product</button>
+                    <button disabled={disabled} type="submit">Edit Product</button>
 
                 </form>
                 )

@@ -1,6 +1,7 @@
 import AddProduct from "../components/AddProduct";
 
 
+
 const AddProductPage = ({addNewProduct, productId, setProductId}) => {
 
   return (

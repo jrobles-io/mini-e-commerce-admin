@@ -29,7 +29,25 @@ body, html {
   gap: 10px;
 }
 
-.nameimages-img {
+/*
+.nameimages-img:hover {
+  transform: scale(1.1); 
+}
+.nameimages-img-small {
+  display: flex;
+  flex-direction: row;
+  width: 30px;
+  height: auto;
+  /* border-radius: 50%; 
+  margin-top: 10px;
+} */
+
+a {
+  text-decoration: none; 
+  color: inherit;
+}
+
+ .nameimages-img {
   display: block;
   width: 100px; 
   height: auto;
@@ -37,22 +55,39 @@ body, html {
   transition: transform 0.3s ease;
 }
 
-.nameimages-img:hover {
-  transform: scale(1.1); 
-}
-.nameimages-img-small {
+.nameimages-img-small-container {
   display: flex;
   flex-direction: row;
-  width: 40px;
-  height: auto;
-  border-radius: 50%;
+  justify-content: space-around;
+  align-items: center;
   margin-top: 10px;
 }
 
-a {
-  text-decoration: none; 
-  color: inherit;
+.nameimages-img-small {
+  display: flex;
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease;
 }
+
+.nameimages-img-small:hover {
+  transform: scale(1.1);
+}
+
+.small-image-0 {
+  
+}
+
+.small-image-1 {
+  height: 40px;
+  margin-left: 10px;
+}
+
+
+
+
+
+
 
 .navbar {
   width: 100%;
@@ -78,6 +113,14 @@ a {
   transform: scale(1.2);
   text-shadow: none;
 }
+
+/* FOR THE LOGO IMAG */
+.navbar-logo img {
+  height: 50px; /* Adjust based on your logo's size */
+  margin-right: 20px; /* Space between logo and nav links */
+}
+
+
 
 .content {
   display: flex;
