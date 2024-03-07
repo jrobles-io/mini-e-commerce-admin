@@ -3,7 +3,7 @@ import React from "react";
 
 const allImages = [
   {
-    name: "Jose",
+    name: "Jose Robles",
     mainImage: {
       url: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eo_circle_blue_letter-j.svg",
       alt: "Jose Pic",
@@ -22,11 +22,10 @@ const allImages = [
     ],
   },
   {
-    name: "Roxangelica",
+    name: "Roxangélica Rolán",
     mainImage: {
       url: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Eo_circle_orange_letter-r.svg",
       alt: "Roxangelica Pic",
-      link: "https://github.com/rrolanbaez",
     },
     smallImages: [
       {
@@ -42,7 +41,7 @@ const allImages = [
     ],
   },
   {
-    name: "Dalton",
+    name: "Dalton Baker",
     mainImage: {
       url: "https://upload.wikimedia.org/wikipedia/commons/9/98/Eo_circle_teal_letter-d.svg",
       alt: "Dalton Pic",
@@ -61,7 +60,7 @@ const allImages = [
     ],
   },
   {
-    name: "Kenneth",
+    name: "Kenneth Coss",
     mainImage: {
       url: "https://upload.wikimedia.org/wikipedia/commons/7/73/Eo_circle_red_letter-k.svg",
       alt: "Kenneth Pic",
@@ -75,7 +74,7 @@ const allImages = [
       {
         img: "src/images/linkedin-logo.png",
         alt: "LinkedIn",
-        link: "https://www.linkedin.com",
+        link: "https://www.linkedin.com/in/kenneth-coss-979a99199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       },
     ],
   },
@@ -85,9 +84,9 @@ const allImages = [
 function AboutPage() {
   return (
     <div className="AboutPage">
-      <h1>Learn About our Members!</h1>
-
-      <div className="images">
+      <h1>Meet our Members!</h1>
+      
+      <div className="images"> 
         {allImages.map((person, index) => (
           <div key={index} className="person-container">
             <a
@@ -101,7 +100,7 @@ function AboutPage() {
                 className="nameimages-img"
               />
             </a>
-
+            <p className="person-name">{person.name}</p>
             <div className="nameimages-img-small-container">
               {person.smallImages.map((smallImage, smallIndex) => (
                 <a

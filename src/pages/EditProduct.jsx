@@ -6,11 +6,8 @@ import { imageUpload } from "../services/cloudinary.js";
 const EditProduct = () => {
     const [product, setProduct] = useState(null);
     const navigate = useNavigate();
-
     const [disabled, setDisabled] = useState(false)
-
     const { products, setProducts } = useContext(ProductContext);
-
     const {productId} = useParams();
 
     const handleSubmit = (e) => {
@@ -26,7 +23,6 @@ const EditProduct = () => {
     };
 
     
-
     const handlePhotoChange = (e) => {
   
       setDisabled(true)
@@ -45,8 +41,6 @@ const EditProduct = () => {
     useEffect(() => {
         
         let  thisProduct = products.find((prod) => String(prod.id) === productId);
-
-       
         setProduct(thisProduct);
 
     }, [productId]);
@@ -160,10 +154,10 @@ const EditProduct = () => {
                             } 
                         />
                     </label>
+
                     <label>
                         Category
-                        <input
-                            type="text" 
+                        <select
                             value={product.category}
                             name="category"
                             alt="category"
@@ -172,9 +166,32 @@ const EditProduct = () => {
                                     ...prev,
                                     [e.target.name]: e.target.value,
                                 }))
-                            } 
-                        />
+                            }
+                        >
+                            <option value="">-- None --</option>
+                            <option value="smartphones">Smartphones</option>
+                            <option value="laptops">Laptops</option>
+                            <option value="fragances">Fragances</option>
+                            <option value="skincare">Skin Care</option>
+                            <option value="groceries">Groceries</option>
+                            <option value="home-decoration">Home Decoration</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="tops">Tops</option>
+                            <option value="womens-dresses">Womens Dresses</option>
+                            <option value="womens-shoes">Womens Shoes</option>
+                            <option value="mens-shirts">Mens Shirts</option>
+                            <option value="mens-shoes">Mens Shoes</option>
+                            <option value="mens-watches">Mens Watches</option>
+                            <option value="womens-watches">Womens Watches</option>
+                            <option value="womens-bags">Womens Bags</option>
+                            <option value="womens-jewellry">Womens Jewelry</option>
+                            <option value="sunglasses">Sunglasses</option>
+                            <option value="automotive">Automotive</option>
+                            <option value="motorcycle">Motorcycle</option>
+                            <option value="lighting">Lighting</option> 
+                        </select>
                     </label>
+
                     <label>
                         Stock
                         <input
@@ -191,7 +208,7 @@ const EditProduct = () => {
                         />
                     </label>
                     <label>
-                        Image
+                        Image&nbsp;&nbsp;
                         <input
                             type="file" 
                             // value={product.thumbnail}
@@ -210,46 +227,6 @@ const EditProduct = () => {
         </>
     )
 
-
 }; 
 
 export default EditProduct; 
-
-
-
-// MAYBE TO IMPLEMENT DROPDOWN MENU FOR CATEGORY
-
-{/* <select name="category" onChange={handleChange} value={product.category} >
-    <option value="">-- None --</option>
-    <option value="smartphones">Smartphones</option>
-    <option value="laptops">Laptops</option>
-    <option value="fragances">Fragances</option>
-    <option value="skincare">Skin Care</option>
-    <option value="groceries">Groceries</option>
-    <option value="home-decoration">Home Decoration</option>
-    <option value="furniture">Furniture</option>
-    <option value="tops">Tops</option>
-    <option value="womens-dresses">Womens Dresses</option>
-    <option value="womens-shoes">Womens Shoes</option>
-    <option value="mens-shirts">Mens Shirts</option>
-    <option value="mens-shoes">Mens Shoes</option>
-    <option value="mens-watches">Mens Watches</option>
-    <option value="womens-watches">Womens Watches</option>
-    <option value="womens-bags">Womens Bags</option>
-    <option value="womens-jewellry">Womens Jewelry</option>
-    <option value="sunglasses">Sunglasses</option>
-    <option value="automotive">Automotive</option>
-    <option value="motorcycle">Motorcycle</option>
-    <option value="lighting">Lighting</option>
-</select> */}
-
-
-  {/* <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <p>Discount: {product.discountPercentage}%</p>
-      <p>Rating: {product.rating}</p>
-      <p>Stock: {product.stock}</p>
-      <p>Brand: {product.brand}</p>
-      <p>Category: {product.category}</p>
-      <img src={product.thumbnail} alt={product.title} /> */}

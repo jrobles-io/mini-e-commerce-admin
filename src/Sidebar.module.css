@@ -1,10 +1,9 @@
-/* Sidebar Styles */
 .sidebar {
-    margin-top: 112px;
+    margin-top: 85px;
     width: 250px;
     transition: width 0.3s ease-in-out;
     height: 100vh;
-    background-color: rgb(10, 25, 41);
+    background-color:#131a35;
     padding-top: 28px;
     position: fixed;
     left: 0;
@@ -12,7 +11,7 @@
 }
 
 .sidebarClosed {
-    /* transition: width 0.3s ease-in-out; */
+    transition: width 0.3s ease-in-out;
     width: 60px;
     position: fixed;
 }
@@ -22,9 +21,13 @@
     align-items: center;
     padding: 10px 20px;
     cursor: pointer;
-    color: #b2bac2;
+    color: white;
     text-decoration: none;
     overflow: hidden;
+}
+
+.sidebarClosed .sideitem {
+    color: gray;
 }
 
 .linkText {
@@ -32,15 +35,38 @@
 }
 
 .sideitem:hover {
-    background-color: #244f7d1c;
+    background-color: #192d46;
+    color: #3ad0d8;
+}
+
+.sidebarClosed .sideitem:hover {
+    background-color: transparent;
+    transform: scale(1.5); 
+    transition: transform 0.3s ease;
 }
 
 .menuBtn {
     align-self: flex-start;
     justify-self: flex-end;
-    color: #b2bac2;
+    color: white;
     background-color: transparent;
     border: none;
     cursor: pointer;
     padding-left: 20px;
+}
+
+.sidebarClosed .menuBtn {
+    color: gray;
+}
+
+.menuBtn:hover {
+    background-color: #192d46;
+    color: #3ad0d8;
+    border-radius: 10%;
+}
+
+.sidebarClosed .menuBtn:hover {
+    background-color: transparent;
+    transform: scale(1.5); 
+    transition: transform 0.3s ease;
 }

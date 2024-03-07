@@ -14,12 +14,13 @@ function DashboardPage( {products, setProducts} ) {
 
   return (
       <div className="product-list">
-        <h2> Product List </h2>
-        {/* <AddProduct addNewProduct={addNewProduct} /> */}
-        {products.map(product => {
-          return <ProductCard key={product.id} product={product} handleDelete={handleDelete}/>
-          })
-        }
+        <h1> Product List </h1>
+        <div className='product-list-conatiner'>
+          {products.map(product => {
+            return <ProductCard key={product.id} product={product} handleDelete={handleDelete}/>
+            })
+          }
+        </div>
       </div>
   )
 }

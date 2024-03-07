@@ -54,7 +54,9 @@ const App = () => {
           </main>
         {/* </div> */}
         </div>
-        <Footer /> 
+        <div className='footer-div'>
+          <Footer /> 
+        </div>
       </div>
 
 

@@ -70,7 +70,6 @@ const handleFormSubmit = (e) => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <span>Add a Product</span>
       <div>
         <label>
           Title
@@ -108,12 +107,12 @@ const handleFormSubmit = (e) => {
         </label>
         
         <label>
-          Image
+          Image&nbsp;&nbsp;
           <input name="thumbnail" type="file" placeholder="Image" onChange={handlePhotoChange} />
         </label>
       </div>
 
-      <div>
+      <div id='category-div'>
         <label>
           Category
           <select name="category" onChange={handleChange} value={newProduct.category} >
