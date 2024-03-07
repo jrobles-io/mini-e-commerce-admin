@@ -5,7 +5,7 @@ const allImages = [
   {
     name: "Jose Robles",
     mainImage: {
-      url: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eo_circle_blue_letter-j.svg",
+      url: "src/images/jose-avatar.png",
       alt: "Jose Pic",
     },
     smallImages: [
@@ -24,7 +24,7 @@ const allImages = [
   {
     name: "Roxangélica Rolán",
     mainImage: {
-      url: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Eo_circle_orange_letter-r.svg",
+      url: "src/images/roxangela-avatar.png",
       alt: "Roxangelica Pic",
     },
     smallImages: [
@@ -43,7 +43,7 @@ const allImages = [
   {
     name: "Dalton Baker",
     mainImage: {
-      url: "https://upload.wikimedia.org/wikipedia/commons/9/98/Eo_circle_teal_letter-d.svg",
+      url: "src/images/dalton-avatar.png",
       alt: "Dalton Pic",
     },
     smallImages: [
@@ -62,7 +62,7 @@ const allImages = [
   {
     name: "Kenneth Coss",
     mainImage: {
-      url: "https://upload.wikimedia.org/wikipedia/commons/7/73/Eo_circle_red_letter-k.svg",
+      url: "src/images/kenneth-avatar.jpg",
       alt: "Kenneth Pic",
     },
     smallImages: [

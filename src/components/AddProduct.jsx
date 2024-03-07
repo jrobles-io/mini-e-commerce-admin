@@ -73,7 +73,7 @@ const handleFormSubmit = (e) => {
       <div>
         <label>
           Title
-          <input name="title" type="text" placeholder="Title" onChange={handleChange} value={newProduct.title} />
+          <input name="title" type="text" placeholder="Title" onChange={handleChange} value={newProduct.title} required/>
         </label>
 
         <label>
@@ -83,7 +83,7 @@ const handleFormSubmit = (e) => {
 
         <label>
           Price
-          <input name="price" type="text" placeholder="Price" onChange={handleChange} value={newProduct.price} />
+          <input name="price" type="text" placeholder="Price" onChange={handleChange} value={newProduct.price} required/>
         </label>
 
         <label>
