@@ -3,7 +3,6 @@ body, html {
   padding: 60px 0px 0px 0px;
   width: 100%;
   min-height: 50vh;
-
   font-family: Arial;
 }
 
@@ -244,22 +243,35 @@ h1 {
 }
 
 
-
-
-.footer {
-  background-color: #007bff;
-  color: #ffffff;
-  text-align: center;
-  padding: 10px 20px;
-  margin-top: auto; 
-  overflow: hidden;
-}
-
 .footer-div {
   /* height: 100px;  */
   /* overflow: hidden; */
   margin-top: auto; 
 }
+
+
+.footer {
+  display: flex;
+  align-items: center; /* Vertically centers the content */
+  justify-content: space-between; /* Separates the <p> and the <a> to opposite ends */
+  padding: 20px; /* Adds some padding inside the footer */
+  background-color: #307bff; /* Example background color */
+  color: #fff; /* Example text color for contrast */
+}
+
+.footer p {
+  margin-left: 250px; /* Removes default margin */
+  text-align: center; /* Ensures the text is centered */
+  flex: 1; /* Allows the paragraph to take up the available space, aiding in centering */
+}
+
+.footer-img img {
+  max-width: 40px; /* Adjusts the image size */
+  height: auto; /* Maintains the aspect ratio of the image */
+  float: right; /* Aligns the image to the right */
+}
+
+
 
 h3 {
   text-align: center;
